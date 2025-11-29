@@ -33,8 +33,4 @@ This system provides a **centralized and transparent platform** supporting proac
 ## 🔗 Prototype
 
 
----
-
-## 📌 GitHub Topics (Suggested)
-`C#`, `Visual-Studio`, `Windows-Forms`, `GUI`, `Desktop-App`, `Database`, `MySQL`, `Student-Management`
 
