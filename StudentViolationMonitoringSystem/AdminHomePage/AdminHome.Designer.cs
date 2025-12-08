@@ -35,7 +35,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dgvStudentInfo = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -106,18 +116,101 @@
             this.label5.TabIndex = 18;
             this.label5.Text = "Home";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Location = new System.Drawing.Point(310, 88);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(240, 120);
+            this.panel2.TabIndex = 19;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(109, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 36);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "430";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(112, 71);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(110, 20);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Total Offense";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel3.Location = new System.Drawing.Point(310, 245);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1027, 38);
+            this.panel3.TabIndex = 20;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel4.Location = new System.Drawing.Point(1097, 88);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(240, 120);
+            this.panel4.TabIndex = 21;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel5.Location = new System.Drawing.Point(572, 88);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(240, 120);
+            this.panel5.TabIndex = 20;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel6.Location = new System.Drawing.Point(835, 88);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(240, 120);
+            this.panel6.TabIndex = 20;
+            // 
+            // dgvStudentInfo
+            // 
+            this.dgvStudentInfo.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvStudentInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudentInfo.Location = new System.Drawing.Point(310, 321);
+            this.dgvStudentInfo.Name = "dgvStudentInfo";
+            this.dgvStudentInfo.RowHeadersWidth = 51;
+            this.dgvStudentInfo.RowTemplate.Height = 24;
+            this.dgvStudentInfo.Size = new System.Drawing.Size(1027, 401);
+            this.dgvStudentInfo.TabIndex = 22;
+            // 
             // AdminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1382, 753);
+            this.Controls.Add(this.dgvStudentInfo);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Name = "AdminHome";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.AdminHome_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +225,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dgvStudentInfo;
     }
 }

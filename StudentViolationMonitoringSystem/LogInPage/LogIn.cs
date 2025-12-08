@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,13 @@ namespace StudentViolationMonitoringSystem.LogInPage
         private void LogIn_Load(object sender, EventArgs e)
         {
 
+        }
+
+     
+
+        private void logInBtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

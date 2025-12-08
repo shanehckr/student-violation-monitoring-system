@@ -16,7 +16,7 @@ namespace StudentViolationMonitoringSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogInPage.LogIn());
+            Application.Run(new AdminHomePage.AdminHome());
         }
     }
 }
