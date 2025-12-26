@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,59 +16,114 @@ namespace StudentViolationSystem
         public homePage()
         {
             InitializeComponent();
+            HomePageData();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void LoadDashboardCounts()
         {
+           
+            totalStudents.Text = Database.GetCount(
+                "SELECT COUNT(DISTINCT student_id) FROM violations"
+            ).ToString();
+
+          
+            totalOffense.Text = Database.GetCount(
+                "SELECT COUNT(*) FROM violations"
+            ).ToString();
+
+        
+            totalMajorOffense.Text = Database.GetCount(
+                @"SELECT COUNT(*) 
+          FROM violations v
+          JOIN offenses o ON v.offense_id = o.offense_id
+          WHERE o.category = 'Major'"
+            ).ToString();
+
+            
+            totalMinorOffense.Text = Database.GetCount(
+                @"SELECT COUNT(*) 
+          FROM violations v
+          JOIN offenses o ON v.offense_id = o.offense_id
+          WHERE o.category = 'Minor'"
+            ).ToString();
+        }
+
+
+        private void HomePageData()
+        {
+            using (MySqlConnection conn = Database.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = @"
+                        SELECT 
+                            v.date AS 'Date',
+                            s.student_id AS 'Student ID',
+                            s.name AS 'Name',
+                            s.year_level AS 'Year Level',
+                            s.section AS 'Section',
+                            o.offense_name AS 'Offense Name',
+                            o.category AS 'Category',
+                            o.default_action AS 'Action Taken'
+                       
+                        FROM studentinfo s
+                        INNER JOIN violations v ON s.student_id = v.student_id
+                        INNER JOIN offenses o ON v.offense_id = o.offense_id";
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+
+                    homeDataGridView.DataSource = table;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        "Failed to load student records.\n\n" + ex.Message,
+                        "Database Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
+            }
+        }
+
+
+
+        private void homeNav_Click(object sender, EventArgs e)
+        {
+            homePage home = new homePage();
+            home.Show();
+            this.Hide();
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void offenseRecNav_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            offenseRecord newForm = new offenseRecord();
-            newForm.Show();
+            offenseRecord offenseRec = new offenseRecord();
+            offenseRec.Show();
             this.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void addOffenseNav_Click(object sender, EventArgs e)
         {
-            addOffense newForm = new addOffense();
-            newForm.Show();
+            addOffense addOff = new addOffense();
+            addOff.Show();
             this.Hide();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void userManagementNav_Click(object sender, EventArgs e)
         {
-            userManagementPage form = new userManagementPage();
-            form.Show();
+            addOffense addOff = new addOffense();
+            addOff.Show();
             this.Hide();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void homePage_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Are you sure you want to log out?","Confirm", MessageBoxButtons.YesNo);
-
-            if (dr == DialogResult.Yes)
-            {
-                loginPage newform = new loginPage();
-                newform.Show();
-                this.Hide();
-            }
+            LoadDashboardCounts();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using StudentViolationSystem;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +21,41 @@ namespace StudentViolationSystem
             searchField.ForeColor = Color.Black;
 
             this.ActiveControl = userManagementLbl;
+            UserManagmentTable();
+        }
+
+        private void UserManagmentTable()
+        {
+            using (MySqlConnection conn = Database.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = @"SELECT 
+
+                       name AS 'Name',
+                       username AS 'Username',
+                       email AS 'Email'
+                       FROM studentinfo";
+
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+
+                    userManagementDataGrid.DataSource = table;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        "Failed to load student records.\n\n" + ex.Message,
+                        "Database Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -85,6 +122,34 @@ namespace StudentViolationSystem
                 loginPage newform = new loginPage();
                 newform.Show();
             }
+        }
+
+        private void homeNav_Click(object sender, EventArgs e)
+        {
+            homePage home = new homePage();
+            home.Show();
+            this.Hide();
+        }
+
+        private void offenseRecNav_Click(object sender, EventArgs e)
+        {
+            offenseRecord offenseRec = new offenseRecord();
+            offenseRec.Show();
+            this.Hide();
+        }
+
+        private void addOffenseNav_Click(object sender, EventArgs e)
+        {
+            addOffense addOff = new addOffense();
+            addOff.Show();
+            this.Hide();
+        }
+
+        private void userManagementNav_Click(object sender, EventArgs e)
+        {
+            userManagementPage userMan = new userManagementPage();
+            userMan.Show();
+            this.Hide();
         }
     }
 }

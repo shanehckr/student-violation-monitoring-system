@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +26,85 @@ namespace StudentViolationSystem
 
             this.ActiveControl = schoolNameLbl;
         }
+
+
+        public static string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (var b in bytes)
+                    builder.Append(b.ToString("x2")); 
+                return builder.ToString();
+            }
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            string userInput = userField.Text.Trim(); // Username or email
+            string password = passField.Text.Trim();
+
+            // Hash the input password
+            string passwordHash = HashPassword(password);
+
+            string connString = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=0ms2026System;";
+
+            string query = @"
+                    SELECT role, email 
+                    FROM studentinfo 
+                    WHERE (username = @userInput OR email = @userInput) 
+                    AND password = @passwordHash
+                    LIMIT 1";
+
+            using (MySqlConnection conn = new MySqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userInput", userInput);
+                        cmd.Parameters.AddWithValue("@passwordHash", passwordHash);
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string role = reader["role"].ToString();
+                                string email = reader["email"].ToString(); 
+
+                                if (role == "admin")
+                                {
+                                    homePage form = new homePage();
+                                    form.Show();
+                                    this.Hide();
+                                }
+                                else if (role == "student")
+                                {
+                                    studentView form = new studentView();
+                                    form.Show();
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Unrecognized role.");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid username/email or password.");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error connecting to database: " + ex.Message);
+                }
+            }
+        }
+
 
         private void registerLabel_Click(object sender, EventArgs e)
         {
@@ -66,24 +147,9 @@ namespace StudentViolationSystem
                 passField.ForeColor = Color.LightGray;
             }
         }
+       
 
-        private void loginButton_Click(object sender, EventArgs e)
-        {
-            if (userField.Text == "admin" && passField.Text == "pass")
-            {
-                homePage form = new homePage();
-                form.Show();
-                this.Hide();
-            } else if (userField.Text == "cess" && passField.Text == "pass")
-            {
-                studentView newform = new studentView();
-                newform.Show();
-                this.Hide();
-            }
-            
-        }
-
-        private void userField_TextChanged(object sender, EventArgs e)
+    private void userField_TextChanged(object sender, EventArgs e)
         {
 
         }

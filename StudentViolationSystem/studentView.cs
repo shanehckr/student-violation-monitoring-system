@@ -1,4 +1,5 @@
 ﻿using System;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,49 @@ namespace StudentViolationSystem
         public studentView()
         {
             InitializeComponent();
+            StudentViewData();
         }
+
+
+
+        private void StudentViewData()
+        {
+            using (MySqlConnection conn = Database.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = @"
+                    SELECT
+                        v.date AS 'Date',
+                        o.offense_name AS 'Offense',
+                        o.category AS 'Category',
+                        o.default_action AS 'Action Taken'
+
+                   FROM StudentInfo s
+                   INNER JOIN violations v ON s.student_id = v.student_id
+                   INNER JOIN offenses o ON v.offense_id = o.offense_id";
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+
+                    studentDataGridView.DataSource = table;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        "Failed to load student records.\n\n" + ex.Message,
+                        "Database Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
+            }
+        }
+
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {

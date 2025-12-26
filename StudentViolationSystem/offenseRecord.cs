@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace StudentViolationSystem
 {
     public partial class offenseRecord : Form
     {
+        //private object conn;
+
         public offenseRecord()
         {
             InitializeComponent();
@@ -19,6 +22,51 @@ namespace StudentViolationSystem
             searchField.ForeColor = Color.Black;
 
             this.ActiveControl = offenseRecLabel;
+
+            OffenseRecordTable();
+        }
+
+        private void OffenseRecordTable()
+        {
+            using (MySqlConnection conn = Database.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = @"
+                        SELECT 
+                            v.date AS 'Date',
+                            s.student_id AS 'Student ID',
+                            s.name AS 'Name',
+                            s.year_level AS 'Year Level',
+                            s.section AS 'Section',
+                            o.offense_name AS 'Offense Name',
+                            o.category AS 'Category',
+                            o.default_action AS 'Action Taken'
+                       
+                        FROM studentinfo s
+                        INNER JOIN violations v ON s.student_id = v.student_id
+                        INNER JOIN offenses o ON v.offense_id = o.offense_id";
+
+
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+
+                    offenseRecDataGridView.DataSource = table;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        "Failed to load student records.\n\n" + ex.Message,
+                        "Database Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
+            }
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
@@ -88,6 +136,34 @@ namespace StudentViolationSystem
                 newform.Show();
                 this.Hide();
             }
+        }
+
+        private void homeNav_Click(object sender, EventArgs e)
+        {
+            homePage home = new homePage();
+            home.Show();
+            this.Hide();
+        }
+
+        private void offenseRecNav_Click(object sender, EventArgs e)
+        {
+            offenseRecord offenseRec = new offenseRecord();
+            offenseRec.Show();
+            this.Hide();
+        }
+
+        private void addOffenseNav_Click(object sender, EventArgs e)
+        {
+            addOffense addOff = new addOffense();
+            addOff.Show();
+            this.Hide();
+        }
+
+        private void userManagementNav_Click(object sender, EventArgs e)
+        {
+            userManagementPage userMan = new userManagementPage();
+            userMan.Show();
+            this.Hide();
         }
     }
 }

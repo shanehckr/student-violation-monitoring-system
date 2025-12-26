@@ -29,313 +29,144 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.logOutText = new System.Windows.Forms.Label();
-            this.userButton = new System.Windows.Forms.Button();
-            this.addOffenseButton = new System.Windows.Forms.Button();
-            this.offenseRecButton = new System.Windows.Forms.Button();
-            this.homeButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.totalStudeText = new System.Windows.Forms.Label();
-            this.totalStudents = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.totalMajorOffense = new System.Windows.Forms.Label();
-            this.majorOffenseText = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.totalMinorOffense = new System.Windows.Forms.Label();
-            this.minorOffenseText = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.totalOffense = new System.Windows.Forms.Label();
-            this.totalOffenseText = new System.Windows.Forms.Label();
-            this.totalOffenseIcon = new System.Windows.Forms.PictureBox();
-            this.minorOffenseIcon = new System.Windows.Forms.PictureBox();
-            this.majorOffenseIcon = new System.Windows.Forms.PictureBox();
-            this.totalStudIcon = new System.Windows.Forms.PictureBox();
-            this.userManagementIcon = new System.Windows.Forms.PictureBox();
+            this.userManagementNav = new System.Windows.Forms.Label();
+            this.addOffenseNav = new System.Windows.Forms.Label();
+            this.offenseRecNav = new System.Windows.Forms.Label();
+            this.homeNav = new System.Windows.Forms.Label();
             this.addOffenseIcon = new System.Windows.Forms.PictureBox();
             this.offenseRecIcon = new System.Windows.Forms.PictureBox();
             this.homeIcon = new System.Windows.Forms.PictureBox();
+            this.userManagementIcon = new System.Windows.Forms.PictureBox();
+            this.logOutText = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.totalStudIcon = new System.Windows.Forms.PictureBox();
+            this.totalStudeText = new System.Windows.Forms.Label();
+            this.totalStudents = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.majorOffenseIcon = new System.Windows.Forms.PictureBox();
+            this.totalMajorOffense = new System.Windows.Forms.Label();
+            this.majorOffenseText = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.minorOffenseIcon = new System.Windows.Forms.PictureBox();
+            this.totalMinorOffense = new System.Windows.Forms.Label();
+            this.minorOffenseText = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.totalOffenseIcon = new System.Windows.Forms.PictureBox();
+            this.totalOffense = new System.Windows.Forms.Label();
+            this.totalOffenseText = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.homeDataGridView = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.totalOffenseIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.minorOffenseIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.majorOffenseIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalStudIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userManagementIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addOffenseIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.offenseRecIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userManagementIcon)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.totalStudIcon)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.majorOffenseIcon)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.minorOffenseIcon)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.totalOffenseIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homeDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel1.Controls.Add(this.userManagementIcon);
-            this.panel1.Controls.Add(this.addOffenseIcon);
-            this.panel1.Controls.Add(this.offenseRecIcon);
-            this.panel1.Controls.Add(this.homeIcon);
-            this.panel1.Controls.Add(this.logOutText);
-            this.panel1.Controls.Add(this.userButton);
-            this.panel1.Controls.Add(this.addOffenseButton);
-            this.panel1.Controls.Add(this.offenseRecButton);
-            this.panel1.Controls.Add(this.homeButton);
-            this.panel1.Location = new System.Drawing.Point(-12, -26);
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.homeDataGridView);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 672);
+            this.panel1.Size = new System.Drawing.Size(1382, 753);
             this.panel1.TabIndex = 0;
-            // 
-            // logOutText
-            // 
-            this.logOutText.AutoSize = true;
-            this.logOutText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutText.Location = new System.Drawing.Point(73, 637);
-            this.logOutText.Name = "logOutText";
-            this.logOutText.Size = new System.Drawing.Size(63, 20);
-            this.logOutText.TabIndex = 6;
-            this.logOutText.Text = "Log out";
-            this.logOutText.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // userButton
-            // 
-            this.userButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.userButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userButton.Location = new System.Drawing.Point(12, 360);
-            this.userButton.Name = "userButton";
-            this.userButton.Size = new System.Drawing.Size(186, 46);
-            this.userButton.TabIndex = 4;
-            this.userButton.Text = "User Mangement";
-            this.userButton.UseVisualStyleBackColor = false;
-            this.userButton.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // addOffenseButton
-            // 
-            this.addOffenseButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.addOffenseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addOffenseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addOffenseButton.Location = new System.Drawing.Point(12, 301);
-            this.addOffenseButton.Name = "addOffenseButton";
-            this.addOffenseButton.Size = new System.Drawing.Size(186, 46);
-            this.addOffenseButton.TabIndex = 3;
-            this.addOffenseButton.Text = "Add Offense";
-            this.addOffenseButton.UseVisualStyleBackColor = false;
-            this.addOffenseButton.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // offenseRecButton
-            // 
-            this.offenseRecButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.offenseRecButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.offenseRecButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offenseRecButton.Location = new System.Drawing.Point(12, 239);
-            this.offenseRecButton.Name = "offenseRecButton";
-            this.offenseRecButton.Size = new System.Drawing.Size(186, 46);
-            this.offenseRecButton.TabIndex = 2;
-            this.offenseRecButton.Text = "Offense Record";
-            this.offenseRecButton.UseVisualStyleBackColor = false;
-            this.offenseRecButton.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // homeButton
-            // 
-            this.homeButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeButton.Location = new System.Drawing.Point(12, 176);
-            this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(186, 46);
-            this.homeButton.TabIndex = 1;
-            this.homeButton.Text = "Home";
-            this.homeButton.UseVisualStyleBackColor = false;
-            this.homeButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel2.Controls.Add(this.totalStudIcon);
-            this.panel2.Controls.Add(this.totalStudeText);
-            this.panel2.Controls.Add(this.totalStudents);
-            this.panel2.Location = new System.Drawing.Point(197, 13);
+            this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel2.Controls.Add(this.userManagementNav);
+            this.panel2.Controls.Add(this.addOffenseNav);
+            this.panel2.Controls.Add(this.offenseRecNav);
+            this.panel2.Controls.Add(this.homeNav);
+            this.panel2.Controls.Add(this.addOffenseIcon);
+            this.panel2.Controls.Add(this.offenseRecIcon);
+            this.panel2.Controls.Add(this.homeIcon);
+            this.panel2.Controls.Add(this.userManagementIcon);
+            this.panel2.Controls.Add(this.logOutText);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(191, 100);
-            this.panel2.TabIndex = 1;
+            this.panel2.Size = new System.Drawing.Size(267, 753);
+            this.panel2.TabIndex = 9;
             // 
-            // totalStudeText
+            // userManagementNav
             // 
-            this.totalStudeText.AutoSize = true;
-            this.totalStudeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalStudeText.Location = new System.Drawing.Point(59, 69);
-            this.totalStudeText.Name = "totalStudeText";
-            this.totalStudeText.Size = new System.Drawing.Size(113, 20);
-            this.totalStudeText.TabIndex = 1;
-            this.totalStudeText.Text = "Total Students";
+            this.userManagementNav.AutoSize = true;
+            this.userManagementNav.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userManagementNav.Location = new System.Drawing.Point(94, 364);
+            this.userManagementNav.Name = "userManagementNav";
+            this.userManagementNav.Size = new System.Drawing.Size(118, 16);
+            this.userManagementNav.TabIndex = 12;
+            this.userManagementNav.Text = "User Management";
+            this.userManagementNav.Click += new System.EventHandler(this.userManagementNav_Click);
             // 
-            // totalStudents
+            // addOffenseNav
             // 
-            this.totalStudents.AutoSize = true;
-            this.totalStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalStudents.Location = new System.Drawing.Point(86, 20);
-            this.totalStudents.Name = "totalStudents";
-            this.totalStudents.Size = new System.Drawing.Size(74, 37);
-            this.totalStudents.TabIndex = 0;
-            this.totalStudents.Text = "422";
-            this.totalStudents.Click += new System.EventHandler(this.label2_Click);
+            this.addOffenseNav.AutoSize = true;
+            this.addOffenseNav.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addOffenseNav.Location = new System.Drawing.Point(94, 303);
+            this.addOffenseNav.Name = "addOffenseNav";
+            this.addOffenseNav.Size = new System.Drawing.Size(81, 16);
+            this.addOffenseNav.TabIndex = 11;
+            this.addOffenseNav.Text = "Add Offense";
+            this.addOffenseNav.Click += new System.EventHandler(this.addOffenseNav_Click);
             // 
-            // panel3
+            // offenseRecNav
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.Controls.Add(this.majorOffenseIcon);
-            this.panel3.Controls.Add(this.totalMajorOffense);
-            this.panel3.Controls.Add(this.majorOffenseText);
-            this.panel3.Location = new System.Drawing.Point(404, 13);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(191, 100);
-            this.panel3.TabIndex = 2;
+            this.offenseRecNav.AutoSize = true;
+            this.offenseRecNav.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.offenseRecNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.offenseRecNav.Location = new System.Drawing.Point(89, 236);
+            this.offenseRecNav.Name = "offenseRecNav";
+            this.offenseRecNav.Size = new System.Drawing.Size(148, 25);
+            this.offenseRecNav.TabIndex = 10;
+            this.offenseRecNav.Text = "Offense Record";
+            this.offenseRecNav.Click += new System.EventHandler(this.offenseRecNav_Click);
             // 
-            // totalMajorOffense
+            // homeNav
             // 
-            this.totalMajorOffense.AutoSize = true;
-            this.totalMajorOffense.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalMajorOffense.Location = new System.Drawing.Point(108, 20);
-            this.totalMajorOffense.Name = "totalMajorOffense";
-            this.totalMajorOffense.Size = new System.Drawing.Size(36, 37);
-            this.totalMajorOffense.TabIndex = 2;
-            this.totalMajorOffense.Text = "0";
-            // 
-            // majorOffenseText
-            // 
-            this.majorOffenseText.AutoSize = true;
-            this.majorOffenseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.majorOffenseText.Location = new System.Drawing.Point(68, 69);
-            this.majorOffenseText.Name = "majorOffenseText";
-            this.majorOffenseText.Size = new System.Drawing.Size(109, 20);
-            this.majorOffenseText.TabIndex = 2;
-            this.majorOffenseText.Text = "Major Offense";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel4.Controls.Add(this.minorOffenseIcon);
-            this.panel4.Controls.Add(this.totalMinorOffense);
-            this.panel4.Controls.Add(this.minorOffenseText);
-            this.panel4.Location = new System.Drawing.Point(609, 13);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(191, 100);
-            this.panel4.TabIndex = 3;
-            // 
-            // totalMinorOffense
-            // 
-            this.totalMinorOffense.AutoSize = true;
-            this.totalMinorOffense.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalMinorOffense.Location = new System.Drawing.Point(100, 20);
-            this.totalMinorOffense.Name = "totalMinorOffense";
-            this.totalMinorOffense.Size = new System.Drawing.Size(55, 37);
-            this.totalMinorOffense.TabIndex = 2;
-            this.totalMinorOffense.Text = "20";
-            // 
-            // minorOffenseText
-            // 
-            this.minorOffenseText.AutoSize = true;
-            this.minorOffenseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minorOffenseText.Location = new System.Drawing.Point(68, 69);
-            this.minorOffenseText.Name = "minorOffenseText";
-            this.minorOffenseText.Size = new System.Drawing.Size(109, 20);
-            this.minorOffenseText.TabIndex = 3;
-            this.minorOffenseText.Text = "Minor Offense";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel5.Controls.Add(this.totalOffenseIcon);
-            this.panel5.Controls.Add(this.totalOffense);
-            this.panel5.Controls.Add(this.totalOffenseText);
-            this.panel5.Location = new System.Drawing.Point(816, 13);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(191, 100);
-            this.panel5.TabIndex = 4;
-            // 
-            // totalOffense
-            // 
-            this.totalOffense.AutoSize = true;
-            this.totalOffense.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalOffense.Location = new System.Drawing.Point(106, 20);
-            this.totalOffense.Name = "totalOffense";
-            this.totalOffense.Size = new System.Drawing.Size(55, 37);
-            this.totalOffense.TabIndex = 4;
-            this.totalOffense.Text = "20";
-            // 
-            // totalOffenseText
-            // 
-            this.totalOffenseText.AutoSize = true;
-            this.totalOffenseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalOffenseText.Location = new System.Drawing.Point(73, 69);
-            this.totalOffenseText.Name = "totalOffenseText";
-            this.totalOffenseText.Size = new System.Drawing.Size(105, 20);
-            this.totalOffenseText.TabIndex = 4;
-            this.totalOffenseText.Text = "Total Offense";
-            // 
-            // totalOffenseIcon
-            // 
-            this.totalOffenseIcon.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.totalOffenseIcon.Image = global::StudentViolationSystem.Properties.Resources.total_offense_icon__1_;
-            this.totalOffenseIcon.Location = new System.Drawing.Point(16, 14);
-            this.totalOffenseIcon.Name = "totalOffenseIcon";
-            this.totalOffenseIcon.Size = new System.Drawing.Size(61, 50);
-            this.totalOffenseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.totalOffenseIcon.TabIndex = 13;
-            this.totalOffenseIcon.TabStop = false;
-            // 
-            // minorOffenseIcon
-            // 
-            this.minorOffenseIcon.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.minorOffenseIcon.Image = global::StudentViolationSystem.Properties.Resources.minor_offense_icon;
-            this.minorOffenseIcon.Location = new System.Drawing.Point(20, 14);
-            this.minorOffenseIcon.Name = "minorOffenseIcon";
-            this.minorOffenseIcon.Size = new System.Drawing.Size(61, 50);
-            this.minorOffenseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.minorOffenseIcon.TabIndex = 12;
-            this.minorOffenseIcon.TabStop = false;
-            // 
-            // majorOffenseIcon
-            // 
-            this.majorOffenseIcon.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.majorOffenseIcon.Image = global::StudentViolationSystem.Properties.Resources.major_offense_icon;
-            this.majorOffenseIcon.Location = new System.Drawing.Point(21, 14);
-            this.majorOffenseIcon.Name = "majorOffenseIcon";
-            this.majorOffenseIcon.Size = new System.Drawing.Size(61, 50);
-            this.majorOffenseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.majorOffenseIcon.TabIndex = 11;
-            this.majorOffenseIcon.TabStop = false;
-            // 
-            // totalStudIcon
-            // 
-            this.totalStudIcon.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.totalStudIcon.Image = global::StudentViolationSystem.Properties.Resources.total_students_icon;
-            this.totalStudIcon.Location = new System.Drawing.Point(9, 14);
-            this.totalStudIcon.Name = "totalStudIcon";
-            this.totalStudIcon.Size = new System.Drawing.Size(61, 50);
-            this.totalStudIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.totalStudIcon.TabIndex = 10;
-            this.totalStudIcon.TabStop = false;
-            // 
-            // userManagementIcon
-            // 
-            this.userManagementIcon.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.userManagementIcon.Image = global::StudentViolationSystem.Properties.Resources.user_management_icon;
-            this.userManagementIcon.Location = new System.Drawing.Point(18, 371);
-            this.userManagementIcon.Name = "userManagementIcon";
-            this.userManagementIcon.Size = new System.Drawing.Size(35, 24);
-            this.userManagementIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.userManagementIcon.TabIndex = 9;
-            this.userManagementIcon.TabStop = false;
+            this.homeNav.AutoSize = true;
+            this.homeNav.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.homeNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.homeNav.Location = new System.Drawing.Point(89, 169);
+            this.homeNav.Name = "homeNav";
+            this.homeNav.Size = new System.Drawing.Size(64, 25);
+            this.homeNav.TabIndex = 5;
+            this.homeNav.Text = "Home";
+            this.homeNav.Click += new System.EventHandler(this.homeNav_Click);
             // 
             // addOffenseIcon
             // 
             this.addOffenseIcon.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.addOffenseIcon.Image = global::StudentViolationSystem.Properties.Resources.add_offense_icon__1_;
-            this.addOffenseIcon.Location = new System.Drawing.Point(18, 313);
+            this.addOffenseIcon.Location = new System.Drawing.Point(35, 290);
+            this.addOffenseIcon.Margin = new System.Windows.Forms.Padding(4);
             this.addOffenseIcon.Name = "addOffenseIcon";
-            this.addOffenseIcon.Size = new System.Drawing.Size(35, 24);
+            this.addOffenseIcon.Size = new System.Drawing.Size(47, 30);
             this.addOffenseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.addOffenseIcon.TabIndex = 8;
             this.addOffenseIcon.TabStop = false;
@@ -344,9 +175,10 @@
             // 
             this.offenseRecIcon.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.offenseRecIcon.Image = global::StudentViolationSystem.Properties.Resources.offense_record_icon;
-            this.offenseRecIcon.Location = new System.Drawing.Point(18, 252);
+            this.offenseRecIcon.Location = new System.Drawing.Point(35, 231);
+            this.offenseRecIcon.Margin = new System.Windows.Forms.Padding(4);
             this.offenseRecIcon.Name = "offenseRecIcon";
-            this.offenseRecIcon.Size = new System.Drawing.Size(35, 24);
+            this.offenseRecIcon.Size = new System.Drawing.Size(47, 30);
             this.offenseRecIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.offenseRecIcon.TabIndex = 7;
             this.offenseRecIcon.TabStop = false;
@@ -355,45 +187,291 @@
             // 
             this.homeIcon.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.homeIcon.Image = global::StudentViolationSystem.Properties.Resources.home_icon__1_;
-            this.homeIcon.Location = new System.Drawing.Point(17, 187);
+            this.homeIcon.Location = new System.Drawing.Point(35, 168);
+            this.homeIcon.Margin = new System.Windows.Forms.Padding(4);
             this.homeIcon.Name = "homeIcon";
-            this.homeIcon.Size = new System.Drawing.Size(35, 24);
+            this.homeIcon.Size = new System.Drawing.Size(47, 30);
             this.homeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.homeIcon.TabIndex = 5;
             this.homeIcon.TabStop = false;
             // 
+            // userManagementIcon
+            // 
+            this.userManagementIcon.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.userManagementIcon.Image = global::StudentViolationSystem.Properties.Resources.user_management_icon;
+            this.userManagementIcon.Location = new System.Drawing.Point(35, 350);
+            this.userManagementIcon.Margin = new System.Windows.Forms.Padding(4);
+            this.userManagementIcon.Name = "userManagementIcon";
+            this.userManagementIcon.Size = new System.Drawing.Size(47, 30);
+            this.userManagementIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.userManagementIcon.TabIndex = 9;
+            this.userManagementIcon.TabStop = false;
+            // 
+            // logOutText
+            // 
+            this.logOutText.AutoSize = true;
+            this.logOutText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutText.Location = new System.Drawing.Point(97, 784);
+            this.logOutText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.logOutText.Name = "logOutText";
+            this.logOutText.Size = new System.Drawing.Size(77, 25);
+            this.logOutText.TabIndex = 6;
+            this.logOutText.Text = "Log out";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel3.Controls.Add(this.totalStudIcon);
+            this.panel3.Controls.Add(this.totalStudeText);
+            this.panel3.Controls.Add(this.totalStudents);
+            this.panel3.Location = new System.Drawing.Point(291, 104);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(255, 123);
+            this.panel3.TabIndex = 10;
+            // 
+            // totalStudIcon
+            // 
+            this.totalStudIcon.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.totalStudIcon.Image = global::StudentViolationSystem.Properties.Resources.total_students_icon;
+            this.totalStudIcon.Location = new System.Drawing.Point(22, 37);
+            this.totalStudIcon.Margin = new System.Windows.Forms.Padding(4);
+            this.totalStudIcon.Name = "totalStudIcon";
+            this.totalStudIcon.Size = new System.Drawing.Size(61, 54);
+            this.totalStudIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.totalStudIcon.TabIndex = 10;
+            this.totalStudIcon.TabStop = false;
+            // 
+            // totalStudeText
+            // 
+            this.totalStudeText.AutoSize = true;
+            this.totalStudeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalStudeText.Location = new System.Drawing.Point(97, 85);
+            this.totalStudeText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalStudeText.Name = "totalStudeText";
+            this.totalStudeText.Size = new System.Drawing.Size(139, 25);
+            this.totalStudeText.TabIndex = 1;
+            this.totalStudeText.Text = "Total Students";
+            // 
+            // totalStudents
+            // 
+            this.totalStudents.AutoSize = true;
+            this.totalStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalStudents.Location = new System.Drawing.Point(126, 33);
+            this.totalStudents.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalStudents.Name = "totalStudents";
+            this.totalStudents.Size = new System.Drawing.Size(89, 46);
+            this.totalStudents.TabIndex = 0;
+            this.totalStudents.Text = "422";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel4.Controls.Add(this.majorOffenseIcon);
+            this.panel4.Controls.Add(this.totalMajorOffense);
+            this.panel4.Controls.Add(this.majorOffenseText);
+            this.panel4.Location = new System.Drawing.Point(567, 104);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(255, 123);
+            this.panel4.TabIndex = 11;
+            // 
+            // majorOffenseIcon
+            // 
+            this.majorOffenseIcon.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.majorOffenseIcon.Image = global::StudentViolationSystem.Properties.Resources.major_offense_icon;
+            this.majorOffenseIcon.Location = new System.Drawing.Point(28, 17);
+            this.majorOffenseIcon.Margin = new System.Windows.Forms.Padding(4);
+            this.majorOffenseIcon.Name = "majorOffenseIcon";
+            this.majorOffenseIcon.Size = new System.Drawing.Size(81, 62);
+            this.majorOffenseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.majorOffenseIcon.TabIndex = 11;
+            this.majorOffenseIcon.TabStop = false;
+            // 
+            // totalMajorOffense
+            // 
+            this.totalMajorOffense.AutoSize = true;
+            this.totalMajorOffense.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalMajorOffense.Location = new System.Drawing.Point(144, 25);
+            this.totalMajorOffense.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalMajorOffense.Name = "totalMajorOffense";
+            this.totalMajorOffense.Size = new System.Drawing.Size(43, 46);
+            this.totalMajorOffense.TabIndex = 2;
+            this.totalMajorOffense.Text = "0";
+            // 
+            // majorOffenseText
+            // 
+            this.majorOffenseText.AutoSize = true;
+            this.majorOffenseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.majorOffenseText.Location = new System.Drawing.Point(91, 85);
+            this.majorOffenseText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.majorOffenseText.Name = "majorOffenseText";
+            this.majorOffenseText.Size = new System.Drawing.Size(135, 25);
+            this.majorOffenseText.TabIndex = 2;
+            this.majorOffenseText.Text = "Major Offense";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel5.Controls.Add(this.minorOffenseIcon);
+            this.panel5.Controls.Add(this.totalMinorOffense);
+            this.panel5.Controls.Add(this.minorOffenseText);
+            this.panel5.Location = new System.Drawing.Point(840, 104);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(255, 123);
+            this.panel5.TabIndex = 12;
+            // 
+            // minorOffenseIcon
+            // 
+            this.minorOffenseIcon.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.minorOffenseIcon.Image = global::StudentViolationSystem.Properties.Resources.minor_offense_icon;
+            this.minorOffenseIcon.Location = new System.Drawing.Point(27, 17);
+            this.minorOffenseIcon.Margin = new System.Windows.Forms.Padding(4);
+            this.minorOffenseIcon.Name = "minorOffenseIcon";
+            this.minorOffenseIcon.Size = new System.Drawing.Size(81, 62);
+            this.minorOffenseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.minorOffenseIcon.TabIndex = 12;
+            this.minorOffenseIcon.TabStop = false;
+            // 
+            // totalMinorOffense
+            // 
+            this.totalMinorOffense.AutoSize = true;
+            this.totalMinorOffense.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalMinorOffense.Location = new System.Drawing.Point(133, 25);
+            this.totalMinorOffense.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalMinorOffense.Name = "totalMinorOffense";
+            this.totalMinorOffense.Size = new System.Drawing.Size(66, 46);
+            this.totalMinorOffense.TabIndex = 2;
+            this.totalMinorOffense.Text = "20";
+            // 
+            // minorOffenseText
+            // 
+            this.minorOffenseText.AutoSize = true;
+            this.minorOffenseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minorOffenseText.Location = new System.Drawing.Point(91, 85);
+            this.minorOffenseText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.minorOffenseText.Name = "minorOffenseText";
+            this.minorOffenseText.Size = new System.Drawing.Size(135, 25);
+            this.minorOffenseText.TabIndex = 3;
+            this.minorOffenseText.Text = "Minor Offense";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel6.Controls.Add(this.totalOffenseIcon);
+            this.panel6.Controls.Add(this.totalOffense);
+            this.panel6.Controls.Add(this.totalOffenseText);
+            this.panel6.Location = new System.Drawing.Point(1116, 104);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(255, 123);
+            this.panel6.TabIndex = 13;
+            // 
+            // totalOffenseIcon
+            // 
+            this.totalOffenseIcon.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.totalOffenseIcon.Image = global::StudentViolationSystem.Properties.Resources.total_offense_icon__1_;
+            this.totalOffenseIcon.Location = new System.Drawing.Point(21, 17);
+            this.totalOffenseIcon.Margin = new System.Windows.Forms.Padding(4);
+            this.totalOffenseIcon.Name = "totalOffenseIcon";
+            this.totalOffenseIcon.Size = new System.Drawing.Size(81, 62);
+            this.totalOffenseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.totalOffenseIcon.TabIndex = 13;
+            this.totalOffenseIcon.TabStop = false;
+            // 
+            // totalOffense
+            // 
+            this.totalOffense.AutoSize = true;
+            this.totalOffense.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalOffense.Location = new System.Drawing.Point(141, 25);
+            this.totalOffense.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalOffense.Name = "totalOffense";
+            this.totalOffense.Size = new System.Drawing.Size(66, 46);
+            this.totalOffense.TabIndex = 4;
+            this.totalOffense.Text = "20";
+            // 
+            // totalOffenseText
+            // 
+            this.totalOffenseText.AutoSize = true;
+            this.totalOffenseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalOffenseText.Location = new System.Drawing.Point(97, 85);
+            this.totalOffenseText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalOffenseText.Name = "totalOffenseText";
+            this.totalOffenseText.Size = new System.Drawing.Size(130, 25);
+            this.totalOffenseText.TabIndex = 4;
+            this.totalOffenseText.Text = "Total Offense";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(1275, 55);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 32);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Admin";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(61, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 16);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "label5";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(297, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 32);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Home";
+            // 
+            // homeDataGridView
+            // 
+            this.homeDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.homeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.homeDataGridView.Location = new System.Drawing.Point(286, 324);
+            this.homeDataGridView.Name = "homeDataGridView";
+            this.homeDataGridView.RowHeadersWidth = 51;
+            this.homeDataGridView.RowTemplate.Height = 24;
+            this.homeDataGridView.Size = new System.Drawing.Size(1080, 394);
+            this.homeDataGridView.TabIndex = 17;
+            // 
             // homePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1030, 644);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1382, 753);
             this.Controls.Add(this.panel1);
             this.Name = "homePage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "homePagee";
             this.Load += new System.EventHandler(this.homePage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.totalOffenseIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.minorOffenseIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.majorOffenseIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.totalStudIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userManagementIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addOffenseIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.offenseRecIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userManagementIcon)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.totalStudIcon)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.majorOffenseIcon)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.minorOffenseIcon)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.totalOffenseIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homeDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -401,30 +479,35 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button addOffenseButton;
-        private System.Windows.Forms.Button offenseRecButton;
-        private System.Windows.Forms.Button homeButton;
-        private System.Windows.Forms.Button userButton;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label totalStudeText;
-        private System.Windows.Forms.Label totalStudents;
-        private System.Windows.Forms.Label totalMajorOffense;
-        private System.Windows.Forms.Label majorOffenseText;
-        private System.Windows.Forms.Label minorOffenseText;
-        private System.Windows.Forms.Label totalOffenseText;
-        private System.Windows.Forms.Label totalMinorOffense;
-        private System.Windows.Forms.Label totalOffense;
-        private System.Windows.Forms.Label logOutText;
-        private System.Windows.Forms.PictureBox homeIcon;
-        private System.Windows.Forms.PictureBox userManagementIcon;
+        private System.Windows.Forms.Label userManagementNav;
+        private System.Windows.Forms.Label addOffenseNav;
+        private System.Windows.Forms.Label offenseRecNav;
+        private System.Windows.Forms.Label homeNav;
         private System.Windows.Forms.PictureBox addOffenseIcon;
         private System.Windows.Forms.PictureBox offenseRecIcon;
+        private System.Windows.Forms.PictureBox homeIcon;
+        private System.Windows.Forms.PictureBox userManagementIcon;
+        private System.Windows.Forms.Label logOutText;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox totalStudIcon;
+        private System.Windows.Forms.Label totalStudeText;
+        private System.Windows.Forms.Label totalStudents;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox majorOffenseIcon;
+        private System.Windows.Forms.Label totalMajorOffense;
+        private System.Windows.Forms.Label majorOffenseText;
+        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox minorOffenseIcon;
+        private System.Windows.Forms.Label totalMinorOffense;
+        private System.Windows.Forms.Label minorOffenseText;
+        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox totalOffenseIcon;
+        private System.Windows.Forms.Label totalOffense;
+        private System.Windows.Forms.Label totalOffenseText;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView homeDataGridView;
     }
 }

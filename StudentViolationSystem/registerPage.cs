@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,8 +21,8 @@ namespace StudentViolationSystem
             surnameField.Text = "Surname";
             surnameField.ForeColor = Color.LightGray;
 
-            FnameField.Text = "First Name";
-            FnameField.ForeColor = Color.LightGray;
+            fNameField.Text = "First Name";
+            fNameField.ForeColor = Color.LightGray;
 
             initialField.Text = "MIddle Initial";
             initialField.ForeColor = Color.LightGray;
@@ -36,6 +38,21 @@ namespace StudentViolationSystem
 
             this.ActiveControl = registerLbl;
         }
+
+        public static string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (var b in bytes)
+                    builder.Append(b.ToString("x2")); 
+                return builder.ToString();
+            }
+        }
+
+
+
 
         private void RegisterPage_Load(object sender, EventArgs e)
         {
@@ -62,19 +79,19 @@ namespace StudentViolationSystem
 
         private void FnameField_Enter(object sender, EventArgs e)
         {
-            if (FnameField.Text == "First Name")
+            if (fNameField.Text == "First Name")
             {
-                FnameField.Text = "";
-                FnameField.ForeColor = Color.Black;
+                fNameField.Text = "";
+                fNameField.ForeColor = Color.Black;
             }
         }
 
         private void FnameField_Leave(object sender, EventArgs e)
         {
-            if (FnameField.Text == "")
+            if (fNameField.Text == "")
             {
-                FnameField.Text = "First Name";
-                FnameField.ForeColor = Color.LightGray;
+                fNameField.Text = "First Name";
+                fNameField.ForeColor = Color.LightGray;
             }
         }
 
@@ -154,5 +171,84 @@ namespace StudentViolationSystem
         {
 
         }
+
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+            // Get input values
+            string surname = surnameField.Text.Trim();
+            string firstName = fNameField.Text.Trim();
+            string middleInitial = initialField.Text.Trim();
+            string username = userField.Text.Trim();
+            string studentId = studentIdField.Text.Trim();
+            string email = emailField.Text.Trim();
+            string password = passField.Text.Trim();
+            string confirmPassword = confirmPassField.Text.Trim();
+
+            // Validate inputs
+            if (string.IsNullOrEmpty(surname) ||
+                string.IsNullOrEmpty(firstName) ||
+                string.IsNullOrEmpty(username) ||
+                string.IsNullOrEmpty(studentId) ||
+                string.IsNullOrEmpty(email) ||
+                string.IsNullOrEmpty(password) ||
+                string.IsNullOrEmpty(confirmPassword))
+            {
+                MessageBox.Show("Please fill in all required fields.");
+                return;
+            }
+
+            if (password != confirmPassword)
+            {
+                MessageBox.Show("Passwords do not match.");
+                return;
+            }
+
+            string fullName = string.IsNullOrEmpty(middleInitial)
+                ? $"{surname}, {firstName}"
+                : $"{surname}, {firstName} {middleInitial.ToUpper()}.";
+
+            string hashedPassword = HashPassword(password);
+
+          
+            string role = "student";
+
+            string connString = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=0ms2026System;";
+
+            
+            string query = @"
+                INSERT INTO studentinfo (student_id, NAME, username, email, password, role)
+                VALUES (@student_id, @name, @username, @email, @password, @role)";
+
+            using (MySqlConnection conn = new MySqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@student_id", studentId);
+                        cmd.Parameters.AddWithValue("@name", fullName);
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@email", email);
+                        cmd.Parameters.AddWithValue("@password", hashedPassword);
+                        cmd.Parameters.AddWithValue("@role", role);
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Account created successfully!");
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error creating account: " + ex.Message);
+                }
+            }
+        }
+
     }
 }
+
+
+
+
+
