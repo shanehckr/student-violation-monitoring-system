@@ -9,7 +9,7 @@ namespace StudentViolationSystem
 {
     internal class Database
     {
-        private static string connStringing = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=0ms2026System";
+        private static string connStringing = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=";
 
         public static MySqlConnection GetConnection()
         {

@@ -110,7 +110,6 @@ namespace StudentViolationSystem
 
         private void userManagementPage_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void logOutText_Click(object sender, EventArgs e)
@@ -150,6 +149,38 @@ namespace StudentViolationSystem
             userManagementPage userMan = new userManagementPage();
             userMan.Show();
             this.Hide();
+        }
+
+        private void homeNav_Click_1(object sender, EventArgs e)
+        {
+            homePage home = new homePage();
+            home.Show();
+            this.Hide();
+        }
+
+        private void offenseRecNav_Click_1(object sender, EventArgs e)
+        {
+            offenseRecord record = new offenseRecord();
+            record.Show();
+            this.Hide();
+        }
+
+        private void addOffenseNav_Click_1(object sender, EventArgs e)
+        {
+            addOffense addOffense = new addOffense();
+            addOffense.Show();
+            this.Hide();
+        }
+
+        private void logOutNav_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to log out?", "Confirm", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                loginPage form = new loginPage();
+                form.Show();
+                this.Hide();
+            }
         }
     }
 }

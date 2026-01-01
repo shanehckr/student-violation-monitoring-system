@@ -24,7 +24,7 @@ namespace StudentViolationSystem
             fNameField.Text = "First Name";
             fNameField.ForeColor = Color.LightGray;
 
-            initialField.Text = "MIddle Initial";
+            initialField.Text = "Middle Initial";
             initialField.ForeColor = Color.LightGray;
 
             userField.Text = "Username";
@@ -35,6 +35,13 @@ namespace StudentViolationSystem
 
             confirmPassField.Text = "Confirm Password";
             confirmPassField.ForeColor = Color.LightGray;
+
+            studentIdField.Text = "Student ID";
+            studentIdField.ForeColor = Color.LightGray;
+
+            emailField.Text = "Email";
+            emailField.ForeColor = Color.LightGray;
+
 
             this.ActiveControl = registerLbl;
         }
@@ -108,7 +115,7 @@ namespace StudentViolationSystem
         {
             if (initialField.Text == "")
             {
-                initialField.Text = "Middile Initial";
+                initialField.Text = "Middle Initial";
                 initialField.ForeColor = Color.LightGray;
             }
         }
@@ -212,7 +219,7 @@ namespace StudentViolationSystem
           
             string role = "student";
 
-            string connString = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=0ms2026System;";
+            string connString = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=;";
 
             
             string query = @"
@@ -245,6 +252,41 @@ namespace StudentViolationSystem
             }
         }
 
+        private void studentIdField_Enter(object sender, EventArgs e)
+        {
+            if (studentIdField.Text == "Student ID")
+            {
+                studentIdField.Text = "";
+                studentIdField.ForeColor = Color.Black;
+            }
+        }
+
+        private void studentIdField_Leave(object sender, EventArgs e)
+        {
+            if (studentIdField.Text == "")
+            {
+                studentIdField.Text = "Student ID";
+                studentIdField.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void emailField_Enter(object sender, EventArgs e)
+        {
+            if (emailField.Text == "Email")
+            {
+                emailField.Text = "";
+                emailField.ForeColor = Color.Black;
+            }
+        }
+
+        private void emailField_Leave(object sender, EventArgs e)
+        {
+            if (emailField.Text == "")
+            {
+                emailField.Text = "Email";
+                emailField.ForeColor = Color.LightGray;
+            }
+        }
     }
 }
 

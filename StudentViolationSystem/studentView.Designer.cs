@@ -32,7 +32,7 @@
             this.logOutText = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.schoolNameLbl = new System.Windows.Forms.Label();
-            this.studNumText = new System.Windows.Forms.Label();
+            this.studIDText = new System.Windows.Forms.Label();
             this.studNameText = new System.Windows.Forms.Label();
             this.gradeLvlText = new System.Windows.Forms.Label();
             this.sectionText = new System.Windows.Forms.Label();
@@ -44,24 +44,25 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel1.Controls.Add(this.logOutText);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.schoolNameLbl);
-            this.panel1.Location = new System.Drawing.Point(-5, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(-4, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1388, 87);
+            this.panel1.Size = new System.Drawing.Size(1121, 71);
             this.panel1.TabIndex = 0;
             // 
             // logOutText
             // 
+            this.logOutText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.logOutText.AutoSize = true;
             this.logOutText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutText.Location = new System.Drawing.Point(1271, 30);
-            this.logOutText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.logOutText.Location = new System.Drawing.Point(1046, 24);
             this.logOutText.Name = "logOutText";
-            this.logOutText.Size = new System.Drawing.Size(77, 25);
+            this.logOutText.Size = new System.Drawing.Size(63, 20);
             this.logOutText.TabIndex = 7;
             this.logOutText.Text = "Log out";
             this.logOutText.Click += new System.EventHandler(this.logOutText_Click);
@@ -69,10 +70,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::StudentViolationSystem.Properties.Resources.school_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(-9, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(-7, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 62);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -81,33 +81,30 @@
             // 
             this.schoolNameLbl.AutoSize = true;
             this.schoolNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.schoolNameLbl.Location = new System.Drawing.Point(119, 30);
-            this.schoolNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.schoolNameLbl.Location = new System.Drawing.Point(89, 24);
             this.schoolNameLbl.Name = "schoolNameLbl";
-            this.schoolNameLbl.Size = new System.Drawing.Size(425, 31);
+            this.schoolNameLbl.Size = new System.Drawing.Size(345, 25);
             this.schoolNameLbl.TabIndex = 0;
             this.schoolNameLbl.Text = "Highlands National High School";
             this.schoolNameLbl.Click += new System.EventHandler(this.label1_Click);
             // 
-            // studNumText
+            // studIDText
             // 
-            this.studNumText.AutoSize = true;
-            this.studNumText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studNumText.Location = new System.Drawing.Point(95, 134);
-            this.studNumText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.studNumText.Name = "studNumText";
-            this.studNumText.Size = new System.Drawing.Size(130, 29);
-            this.studNumText.TabIndex = 1;
-            this.studNumText.Text = "202500567";
+            this.studIDText.AutoSize = true;
+            this.studIDText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studIDText.Location = new System.Drawing.Point(71, 109);
+            this.studIDText.Name = "studIDText";
+            this.studIDText.Size = new System.Drawing.Size(100, 24);
+            this.studIDText.TabIndex = 1;
+            this.studIDText.Text = "202500567";
             // 
             // studNameText
             // 
             this.studNameText.AutoSize = true;
             this.studNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studNameText.Location = new System.Drawing.Point(93, 164);
-            this.studNameText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.studNameText.Location = new System.Drawing.Point(70, 133);
             this.studNameText.Name = "studNameText";
-            this.studNameText.Size = new System.Drawing.Size(264, 29);
+            this.studNameText.Size = new System.Drawing.Size(215, 24);
             this.studNameText.TabIndex = 2;
             this.studNameText.Text = "DELA CRUZ, JUAN A.";
             // 
@@ -115,10 +112,9 @@
             // 
             this.gradeLvlText.AutoSize = true;
             this.gradeLvlText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gradeLvlText.Location = new System.Drawing.Point(100, 193);
-            this.gradeLvlText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.gradeLvlText.Location = new System.Drawing.Point(75, 157);
             this.gradeLvlText.Name = "gradeLvlText";
-            this.gradeLvlText.Size = new System.Drawing.Size(40, 25);
+            this.gradeLvlText.Size = new System.Drawing.Size(31, 20);
             this.gradeLvlText.TabIndex = 3;
             this.gradeLvlText.Text = "7 - ";
             // 
@@ -126,37 +122,44 @@
             // 
             this.sectionText.AutoSize = true;
             this.sectionText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sectionText.Location = new System.Drawing.Point(147, 193);
-            this.sectionText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.sectionText.Location = new System.Drawing.Point(110, 157);
             this.sectionText.Name = "sectionText";
-            this.sectionText.Size = new System.Drawing.Size(26, 25);
+            this.sectionText.Size = new System.Drawing.Size(20, 20);
             this.sectionText.TabIndex = 4;
             this.sectionText.Text = "A";
             // 
             // studentDataGridView
             // 
+            this.studentDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.studentDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.studentDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.studentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.studentDataGridView.Location = new System.Drawing.Point(105, 299);
+            this.studentDataGridView.Location = new System.Drawing.Point(74, 195);
+            this.studentDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.studentDataGridView.Name = "studentDataGridView";
             this.studentDataGridView.RowHeadersWidth = 51;
             this.studentDataGridView.RowTemplate.Height = 24;
-            this.studentDataGridView.Size = new System.Drawing.Size(1171, 448);
+            this.studentDataGridView.Size = new System.Drawing.Size(917, 454);
             this.studentDataGridView.TabIndex = 5;
+            this.studentDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentDataGridView_CellContentClick);
             // 
             // studentView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1373, 793);
+            this.ClientSize = new System.Drawing.Size(1114, 660);
             this.Controls.Add(this.studentDataGridView);
             this.Controls.Add(this.sectionText);
             this.Controls.Add(this.gradeLvlText);
             this.Controls.Add(this.studNameText);
-            this.Controls.Add(this.studNumText);
+            this.Controls.Add(this.studIDText);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "studentView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.studentView_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -170,7 +173,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label schoolNameLbl;
-        private System.Windows.Forms.Label studNumText;
+        private System.Windows.Forms.Label studIDText;
         private System.Windows.Forms.Label studNameText;
         private System.Windows.Forms.Label gradeLvlText;
         private System.Windows.Forms.Label sectionText;

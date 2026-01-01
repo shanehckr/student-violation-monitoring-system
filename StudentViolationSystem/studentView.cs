@@ -1,5 +1,4 @@
 ﻿using System;
-using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using static StudentViolationSystem.loginPage;
 
 namespace StudentViolationSystem
 {
@@ -57,9 +58,6 @@ namespace StudentViolationSystem
             }
         }
 
-
-
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -76,5 +74,18 @@ namespace StudentViolationSystem
                 this.Hide();
             }
         }
-    }
+
+        private void studentView_Load(object sender, EventArgs e)
+        {
+            studIDText.Text = userSession.studentId;
+            studNameText.Text = userSession.fullName;
+            gradeLvlText.Text = userSession.grade;
+            sectionText.Text = userSession.section;
+        }
+
+        private void studentDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    } 
 }

@@ -9,14 +9,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace StudentViolationSystem
 {
     public partial class loginPage : Form
     {
+
         public loginPage()
         {
             InitializeComponent();
+            RegisterPage register = new RegisterPage();
+            studentView student = new studentView();
+
 
             userField.Text = "Username";
             userField.ForeColor = Color.LightGray;
@@ -40,7 +45,7 @@ namespace StudentViolationSystem
             }
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        public void loginButton_Click(object sender, EventArgs e)
         {
             string userInput = userField.Text.Trim(); // Username or email
             string password = passField.Text.Trim();
@@ -48,10 +53,10 @@ namespace StudentViolationSystem
             // Hash the input password
             string passwordHash = HashPassword(password);
 
-            string connString = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=0ms2026System;";
+            string connString = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=;";
 
             string query = @"
-                    SELECT role, email 
+                    SELECT role, email, student_id, name, section, year_level
                     FROM studentinfo 
                     WHERE (username = @userInput OR email = @userInput) 
                     AND password = @passwordHash
@@ -82,6 +87,10 @@ namespace StudentViolationSystem
                                 }
                                 else if (role == "student")
                                 {
+                                    userSession.studentId = reader["student_id"].ToString();
+                                    userSession.fullName = reader["name"].ToString();
+                                    userSession.grade = reader["year_level"].ToString();
+                                    userSession.section = reader["section"].ToString();
                                     studentView form = new studentView();
                                     form.Show();
                                     this.Hide();
@@ -102,10 +111,16 @@ namespace StudentViolationSystem
                 {
                     MessageBox.Show("Error connecting to database: " + ex.Message);
                 }
+
             }
         }
-
-
+        public static class userSession
+        {
+            public static string studentId {get; set;}
+            public static string fullName { get; set; }
+            public static string grade { get; set; }
+            public static string section { get; set; }
+        }
         private void registerLabel_Click(object sender, EventArgs e)
         {
             RegisterPage newForm = new RegisterPage();
@@ -156,7 +171,27 @@ namespace StudentViolationSystem
 
         private void loginPage_Load(object sender, EventArgs e)
         {
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void schoolNameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void passField_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
 }
+
