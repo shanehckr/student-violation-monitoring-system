@@ -165,5 +165,46 @@ namespace StudentViolationSystem
             userMan.Show();
             this.Hide();
         }
+
+        private void homeNav_Click_1(object sender, EventArgs e)
+        {
+            homePage home = new homePage();
+            home.Show();
+        }
+
+        private void addOffenseNav_Click_1(object sender, EventArgs e)
+        {
+            addOffense addOffense = new addOffense();
+            addOffense.Show();
+            this.Hide();
+        }
+
+        private void userManagementNav_Click_1(object sender, EventArgs e)
+        {
+            userManagementPage user = new userManagementPage();
+            user.Show();
+            this.Hide();
+        }
+
+        private void logOutNav_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to log out?", "Confirm", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                loginPage form = new loginPage();
+                form.Show();
+                this.Hide();
+            }
+        }
+
+        private void addOffenseIcon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void offenseRecDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

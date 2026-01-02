@@ -20,6 +20,7 @@ namespace StudentViolationSystem
     {
         public addOffense()
         {
+            this.ActiveControl = studInfoTxt;
             InitializeComponent();
 
             studNameCb.DropDownStyle = ComboBoxStyle.DropDown; // allows typing
@@ -207,9 +208,8 @@ namespace StudentViolationSystem
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            string connString = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=0ms2026System;";
-
-
+            string connString = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=;";
+            
             if (studNameCb.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a student!");
@@ -262,12 +262,14 @@ namespace StudentViolationSystem
 
                             // Insert into studentinfo table
                             string insertQuery = @"
-                        INSERT INTO violations (student_id, offense_id, date)
-                        VALUES (@studentId, @offenseId, @date)";
+                        INSERT INTO violations (student_id, offense_id, date, year_level, section)
+                        VALUES (@studentId, @offenseId, @date,@yearLevel,@section )";
                             MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
                             insertCmd.Parameters.AddWithValue("@studentId", studentId);
                             insertCmd.Parameters.AddWithValue("@offenseId", offenseId);
                             insertCmd.Parameters.AddWithValue("@date", violationDate);
+                            insertCmd.Parameters.AddWithValue("@yearLevel", yearLevel);
+                            insertCmd.Parameters.AddWithValue("@section", section);
 
                             insertCmd.ExecuteNonQuery();
                             MessageBox.Show("Student record and offense saved successfully!");
@@ -315,8 +317,8 @@ namespace StudentViolationSystem
                         studIdTxtField.Text = reader["student_id"].ToString();
                         yearLvlTxtField.Text = reader["year_level"].ToString();
                         secTxtField.Text = reader["section"].ToString();
+                        }
                     }
-                }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error fetching student details: " + ex.Message);
@@ -353,7 +355,7 @@ namespace StudentViolationSystem
 
         private void OffenseClassificationToDb(string selectedOffenseClassification, int studentId)
         {
-            string connString = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=0ms2026System;";
+            string connString = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=;";
 
             using (MySqlConnection conn = new MySqlConnection(connString))
             {
@@ -395,7 +397,7 @@ namespace StudentViolationSystem
 
         private void offenseTitleCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string connString = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=0ms2026System;";
+            string connString = "Server=localhost;Database=student_violation_monitoring_system_db;Uid=root;Pwd=;";
 
             if (offenseTitleCombo.SelectedItem != null)
             {
@@ -414,6 +416,48 @@ namespace StudentViolationSystem
                     }
                 }
             }
+        }
+
+        private void homeNav_Click_1(object sender, EventArgs e)
+        {
+            homePage home = new homePage();
+            home.Show();
+            this.Hide();
+        }
+
+        private void offenseRecNav_Click_1(object sender, EventArgs e)
+        {
+            offenseRecord record = new offenseRecord();
+            record.Show();
+            this.Hide();
+        }
+
+        private void userManagementNav_Click_1(object sender, EventArgs e)
+        {
+            userManagementPage usuer = new userManagementPage();
+            usuer.Show();
+            this.Hide();
+        }
+
+        private void logOutNav_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to log out?", "Confirm", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                loginPage form = new loginPage();
+                form.Show();
+                this.Hide();
+            }
+        }
+
+        private void yearLvlTxtField_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void studIdTxtField_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
