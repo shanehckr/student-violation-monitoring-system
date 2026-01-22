@@ -1,8 +1,6 @@
 # Student Violation Monitoring System
 
-## Overview
-
-The **Student Violation Monitoring System** is a desktop application designed to efficiently record, manage, and monitor student disciplinary violations within an educational institution. The system replaces traditional manual record-keeping with a structured, centralized, and database-driven solution.
+A desktop application designed to efficiently record, manage, and monitor student disciplinary violations within an educational institution. The system replaces traditional manual record-keeping with a structured, centralized, and database-driven solution.
 
 ## Objectives
 
@@ -22,5 +20,5 @@ The **Student Violation Monitoring System** is a desktop application designed to
 
 - **Programming Language:** C#  
 - **Framework:** .NET  
-- **Database:** SQL (Relational Database Management System)  
+- **Database:** MySQL (Relational Database Management System)  
 - **Development Environment:** Visual Studio 2022
